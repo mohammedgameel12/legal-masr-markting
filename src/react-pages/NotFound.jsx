@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeft, Home, MessageSquare } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import "./NotFound.css";
 
 export default function NotFound() {
@@ -20,7 +20,7 @@ export default function NotFound() {
 
   return (
     <div className="nf">
-      <main className="nf-card">
+      <div className="nf-card">
         <span className="nf-code" aria-hidden="true">
           404
         </span>
@@ -33,12 +33,10 @@ export default function NotFound() {
         </code>
 
         <div className="nf-actions">
-          <Button asChild>
-            <Link to="/">
+          <a className={buttonVariants({})} href="/">
               <Home size={16} />
               {meta.home}
-            </Link>
-          </Button>
+            </a>
 
           <Button type="button" variant="outline" onClick={handleBack}>
             <ArrowLeft size={16} className="nf-back-icon" />
@@ -46,11 +44,11 @@ export default function NotFound() {
           </Button>
         </div>
 
-        <Link to="/feedback" className="nf-report">
+        <a href="/feedback" className="nf-report">
           <MessageSquare size={14} />
           {meta.report}
-        </Link>
-      </main>
+        </a>
+      </div>
     </div>
   );
 }

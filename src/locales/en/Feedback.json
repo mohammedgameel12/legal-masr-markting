@@ -1,14 +1,7 @@
 {
-  "meta": {
-    "back": "Back to home",
-    "badge": "Feedback",
-    "title": "Send us your feedback",
-    "subtitle": "Found a bug, have an idea, or just want to tell us what you think? Fill in the form below. We read every message and use it to make the app better."
-  },
-  "form": {
-    "title": "Feedback form",
-    "loading": "Loading the form...",
-    "fallback": "Form not loading?",
-    "open": "Open it in a new tab"
-  }
+  "title": "Help improve Legal Masr",
+  "subtitle": "Report a problem or tell us what would make your working day easier.",
+  "details": "Include version 0.2.4, your operating system, what you tried and what happened. A short example with fictional data is enough.",
+  "privacy": "Do not send client names, case documents, passwords, recovery keys or backups. Contact opens your chosen mail app; nothing is sent automatically. This website and installer downloads use Cloudflare hosting, which processes standard connection metadata such as IP addresses. Website language and theme preferences are saved in your browser.",
+  "contact": "Contact support"
 }

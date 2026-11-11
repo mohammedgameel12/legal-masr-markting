@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft, Download, Info } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import "./HowToUse.css";
-import { Link } from "react-router-dom";
 
 function Steps({ items }) {
   if (!items?.length) return null;
@@ -128,23 +127,19 @@ export default function HowToUse() {
   return (
     <div className="htu">
       <header className="htu-hero">
-        <Button asChild variant="ghost" size="sm">
-          <Link to="/">
+        <a className={buttonVariants({variant: "ghost", size: "sm"})} href="/">
             <ArrowLeft size={16} />
             {meta.back}
-          </Link>
-        </Button>
+          </a>
 
         <h1>{meta.title}</h1>
         <p className="htu-hero__subtitle">{meta.subtitle}</p>
 
         <div className="htu-hero__actions">
-          <Button asChild>
-            <Link to="/download">
+          <a className={buttonVariants({})} href="/download">
               <Download size={16} />
               {meta.download}
-            </Link>
-          </Button>
+            </a>
         </div>
 
         <p className="htu-hero__note">{meta.note}</p>
@@ -168,7 +163,7 @@ export default function HowToUse() {
           </ol>
         </nav>
 
-        <main className="htu-content">
+        <div className="htu-content">
           {sections.map((section, index) => (
             <section key={section.id} id={section.id} className="htu-section">
               <div className="htu-section__head">
@@ -199,7 +194,7 @@ export default function HowToUse() {
               )}
             </section>
           ))}
-        </main>
+        </div>
       </div>
     </div>
   );

@@ -1,68 +1,31 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Download,
-  Quote,
-  Link2,
-  Mic,
-  Search,
+  Briefcase,
+  Users,
+  Wallet,
   Archive,
   ShieldCheck,
-  Cloud,
+  CalendarDays,
   FileText,
   ArrowRight,
   Check,
   Lock,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import HeroBackground from "../components/HeroBackground";
 import "./Home.css";
-import { Link } from "react-router-dom";
 
-const FEATURE_ICONS = [Quote, FileText, Link2, Mic, Search, Archive];
-
-function useScrollReveal(language) {
-  useEffect(() => {
-    const elements = document.querySelectorAll(".reveal");
-
-    if (!elements.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          } else {
-            entry.target.classList.remove("is-visible");
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -60px 0px",
-      },
-    );
-
-    elements.forEach((element) => observer.observe(element));
-
-    return () => observer.disconnect();
-  }, [language]);
-}
+const FEATURE_ICONS = [Briefcase, CalendarDays, Users, Wallet, FileText, Archive];
 
 export default function Home() {
-  const { t, i18n } = useTranslation("Home");
-
-  const language = i18n.resolvedLanguage || i18n.language || "ar";
-
-  useScrollReveal(language);
+  const { t } = useTranslation("Home");
 
   const features = t("features.items", { returnObjects: true });
   const steps = t("guide.steps", { returnObjects: true });
   const localPoints = t("local.points", { returnObjects: true });
-  const saasPoints = t("saas.points", { returnObjects: true });
-  const platforms = t("download.platforms", { returnObjects: true });
 
   return (
     <div className="home">
@@ -87,20 +50,16 @@ export default function Home() {
             </p>
 
             <div className="home-hero__actions hero-reveal hero-reveal--4">
-              <Button asChild size="lg">
-                <a href="#download">
+              <a className={buttonVariants({size: "lg"})} href="/download">
                   <Download size={18} />
                   {t("hero.primary")}
                   <ArrowRight size={17} />
                 </a>
-              </Button>
 
-              <Button asChild size="lg" variant="ghost">
-                <Link to="/how-to-use">
+              <a className={buttonVariants({variant: "ghost", size: "lg"})} href="/how-to-use">
                   {t("hero.secondary")}
                   <ArrowRight size={17} />
-                </Link>
-              </Button>
+                </a>
             </div>
 
             <div className="home-hero__trust hero-reveal hero-reveal--5">
@@ -130,22 +89,6 @@ export default function Home() {
               </div>
 
               <div className="home-product__body">
-                <div className="home-product__document">
-                  <div className="home-product__document-line w90" />
-                  <div className="home-product__document-line w75" />
-
-                  <div className="home-product__highlight">
-                    <span />
-                    <span />
-                  </div>
-
-                  <div className="home-product__document-line w85" />
-                  <div className="home-product__document-line w65" />
-
-                  <div className="home-product__document-line w80" />
-                  <div className="home-product__document-line w55" />
-                </div>
-
                 <div className="home-product__sidebar">
                   <div className="home-product__sidebar-header">
                     <FileText size={14} />
@@ -239,12 +182,10 @@ export default function Home() {
         </div>
 
         <div className="reveal reveal--stagger-4">
-          <Button asChild variant="outline">
-            <Link to="/how-to-use">
+          <a className={buttonVariants({variant: "outline"})} href="/how-to-use">
               {t("guide.cta")}
               <ArrowRight size={17} />
-            </Link>
-          </Button>
+            </a>
         </div>
       </section>
 
@@ -274,39 +215,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= SAAS ================= */}
-      <section id="saas" className="home-section home-saas-section">
-        <div className="home-saas">
-          <div className="home-saas__visual reveal reveal--left">
-            <div className="home-saas__orb" />
-
-            <div className="home-saas__cloud">
-              <Cloud size={46} />
-            </div>
-          </div>
-
-          <div className="home-saas__content reveal reveal--right">
-            <Badge>{t("saas.badge")}</Badge>
-
-            <h2>{t("saas.title")}</h2>
-
-            <p>{t("saas.desc")}</p>
-
-            <ul>
-              {saasPoints.map((point, index) => (
-                <li
-                  key={index}
-                  className={`reveal reveal--stagger-${Math.min(index + 1, 6)}`}
-                >
-                  <Check size={16} />
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* ================= DOWNLOAD ================= */}
       <section id="download" className="home-download reveal">
         <HeroBackground />
@@ -322,10 +230,10 @@ export default function Home() {
           <h2>{t("download.desc")}</h2>
 
           <div className="home-download__buttons">
-            <Link to="/download" className="home-download__button rounded-4xl">
+            <a href="/download" className="home-download__button rounded-4xl">
               <Download size={18} />
               {t("download.cta")}
-            </Link>
+            </a>
           </div>
 
           <p>{t("download.note")}</p>

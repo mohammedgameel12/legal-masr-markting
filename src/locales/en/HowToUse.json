@@ -1,481 +1,88 @@
 {
   "meta": {
-    "badge": "Tester manual · v0.1.0",
-    "title": "How to use Research Notebook",
-    "subtitle": "A complete walkthrough of the desktop app: install, write, capture evidence from PDFs, record audio, search, export, back up and recover.",
-    "toc": "On this page",
     "back": "Back to home",
-    "download": "Download",
-    "note": "This guide describes the current 0.1.0 build, including its limits. Where a feature is not available, it says so."
+    "title": "Start using Legal Masr",
+    "subtitle": "A first-case walkthrough for the v0.2.4 public beta.",
+    "download": "Download the beta",
+    "note": "Begin with fictional records while evaluating the beta. Keep a separate backup before using important data.",
+    "toc": "On this page"
   },
   "sections": [
     {
       "id": "install",
-      "title": "Install and launch",
-      "intro": "Get the 0.1.0 package for your operating system (x64). Keep a separate copy of important research before testing. There is no automatic updater in this build.",
-      "groups": [
-        {
-          "heading": "Windows",
-          "steps": [
-            "Installed copy: run Research-Notebook-0.1.0-Setup-x64.exe. It is a one-click, per-user installer.",
-            "Portable copy: run Research-Notebook-0.1.0-Portable-x64.exe. Portable describes how the executable launches; your library is not stored beside it.",
-            "The packages are unsigned. If Windows shows a trust prompt, check that you obtained the expected package first."
-          ]
-        },
-        {
-          "heading": "Linux",
-          "steps": [
-            "AppImage: make the file executable (chmod +x Research-Notebook-0.1.0-linux-x64.AppImage) and open it.",
-            "DEB: sudo apt install ./Research-Notebook-0.1.0-linux-x64.deb",
-            "RPM (Fedora): sudo dnf install ./Research-Notebook-0.1.0-linux-x64.rpm",
-            "Open Research Notebook from your application launcher after installing a DEB or RPM."
-          ]
-        }
+      "title": "Download and install",
+      "steps": [
+        "Choose the Windows 10/11 x64 installer or a Linux x64 package from Downloads. macOS and mobile packages are not included.",
+        "Windows: run the installer, or extract the portable ZIP before opening the app. Linux: use the command shown beside your package."
       ],
-      "expected": "An empty workspace, or your existing local library, opens. If launch fails, record the exact message and package filename. Do not repeatedly reinstall over your only copy of a library."
+      "callout": "This beta is unsigned. Windows may show a SmartScreen or unknown-publisher warning."
     },
     {
-      "id": "storage",
-      "title": "How your data is stored",
-      "intro": "A notebook holds a research project. A page groups a topic. A note is a small document on a page. A block is one piece of a note: evidence, interpretation, a question or media.",
+      "id": "setup",
+      "title": "Set up and keep your recovery key",
+      "steps": [
+        "Enter your name and choose a password when you first open the app.",
+        "Save the recovery key shown during setup somewhere safe, separate from the computer and backup. Do not send it to support.",
+        "Choose Arabic or English and the appearance you prefer in Settings."
+      ],
+      "callout": "Support cannot unlock your encrypted data for you. Keep both a backup and a safe way to unlock it."
+    },
+    {
+      "id": "first-case",
+      "title": "Add a client and a case",
+      "steps": [
+        "Open Clients and choose Add client. Enter the name and relevant contact details, then save.",
+        "Open Cases and choose Add case. Enter the internal file number and available court details, and link the client.",
+        "Add related powers of attorney and managed copies of documents as needed. Documents open in the appropriate app on your computer."
+      ]
+    },
+    {
+      "id": "daily",
+      "title": "Plan and record your daily work",
+      "steps": [
+        "Add a hearing to the case, then review Today and Agenda for upcoming work.",
+        "After the hearing, record its decision and add the next hearing if needed.",
+        "Create preparation tasks with due dates and mark them complete as you finish.",
+        "Record the fee agreement, payments and expenses, then review the case or client account."
+      ],
+      "callout": "There are no desktop notifications or automatic reminders. Check Today and Agenda regularly. Finance is for tracking fees and expenses, not full accounting."
+    },
+    {
+      "id": "backup",
+      "title": "Create a backup before you need one",
+      "steps": [
+        "Open Settings → Backups and create an encrypted backup manually.",
+        "Save a separate copy outside the app’s data folder, ideally on a separate device. There is no automatic backup schedule.",
+        "To restore, select the backup, authenticate, review the preview and confirm replacement only after checking it. Preserve a separate backup of current data first."
+      ],
+      "callout": "Restore replaces the current app data with the selected backup. Cross-device restore acceptance remains unverified for this beta. The portable ZIP and AppImage keep app data in the normal operating-system data folder."
+    },
+    {
+      "id": "exports",
+      "title": "Export and share carefully",
       "bullets": [
-        "Everything is saved to a local SQLite database plus managed asset folders.",
-        "See Application menu → settings → Library & Storage → Active library for the real location.",
-        "Default location: %APPDATA%\\research-notebook on Windows, ~/.config/research-notebook on Linux.",
-        "There is no cloud sync or sign-in. OpenRouter transcription is a separate, optional network action.",
-        "Text and titles save when you leave their field. Click elsewhere before changing pages or closing the app.",
-        "Keep the database and assets together when recovering a library."
+        "Export a single case or all records as CSV files with managed documents. Exports are unencrypted and may contain confidential information.",
+        "An export is not an encrypted backup and cannot be restored through the backup flow.",
+        "Archive hides a record without deleting it. Permanent deletion is a separate action: read the scope confirmation before proceeding."
       ]
     },
     {
-      "id": "notebooks",
-      "title": "Create notebooks, pages and notes",
-      "steps": [
-        "Select Create notebook (empty library) or New notebook at the bottom of the sidebar. The app creates Untitled notebook and its first Untitled page.",
-        "Click the notebook title in the sidebar, type a name, then click elsewhere to save.",
-        "Click Page title at the top of the workspace, type a name, then click elsewhere. The sidebar label updates.",
-        "Type a name in New page and press Enter, or use the small Create page icon.",
-        "Select Add note (or Create first note on an empty page). Use Add note again for more notes."
-      ],
-      "expected": "Each note shows Add block, Record audio and the command-menu button. Notes have no visible title, rename or delete command in this build.",
-      "subsections": [
-        {
-          "heading": "Select the receiving note and load longer pages",
-          "steps": [
-            "Click into a text block or focus a control inside the note you want. Its document gets a focus outline; clicking blank background is not reliable.",
-            "Focus the note again before each PDF capture or attachment. Reloading the workspace clears the active-note selection, and Research capture then uses the first note.",
-            "On pages with more than 50 notes, scroll to Load more notes. Each click adds the next batch."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "blocks",
-      "title": "Write and save semantic blocks",
-      "intro": "Choose Write for the full-width editor. Select Add block for a plain text block, or open the block command menu (the Type / for commands button) for another type. Type, then click elsewhere to save. There is no Save button.",
-      "table": {
-        "head": ["Type", "Use it for"],
-        "rows": [
-          ["text", "General notes"],
-          ["source text", "Evidence or extracted material"],
-          ["commentary", "Your interpretation"],
-          ["explanation", "Supporting reasoning"],
-          ["question", "Something to investigate"],
-          ["answer", "Your response"],
-          ["quote", "A quotation or memorable passage"]
-        ]
-      },
-      "bullets": [
-        "All seven types use the same plain text editor. They label purpose; they do not evaluate or answer anything.",
-        "A manually inserted source text or quote does not gain PDF provenance. Use PDF capture for a source link.",
-        "Typing / in a text block does not open the menu in this build. Click the Type / for commands button.",
-        "The /audio menu entry only shows guidance. Use Record audio to record.",
-        "There is no rich-text toolbar, code, table or divider insertion."
-      ],
-      "subsections": [
-        {
-          "heading": "Duplicate, move, answer or delete a block",
-          "steps": [
-            "Hover a block and click its three-dot Actions for … block button.",
-            "Duplicate appends a copy to the same note. Check its position.",
-            "Move up / Move down shifts one place; the command is disabled at the start or end.",
-            "On a question, Add answer appends a blank answer linked by responds to.",
-            "Move to trash removes a block recoverably (see Trash)."
-          ]
-        },
-        {
-          "heading": "Reorder with mouse or keyboard",
-          "steps": [
-            "Drag the dotted handle onto another block in the same note. Upper half drops before, lower half drops after.",
-            "Or focus a text block and press Alt + ↑ or Alt + ↓.",
-            "Reordering works within one note only, not between notes or pages."
-          ]
-        },
-        {
-          "heading": "Convert blocks, link reasoning, inspect metadata",
-          "steps": [
-            "Open Actions → Inspector. Use Convert block to switch between the seven text types. Text is preserved; media blocks cannot be converted.",
-            "Choose a Relation type: explains, responds to, comments on or summarizes. Direction runs from the inspected block to the target.",
-            "Pick a target in Block to link and select Link. Targets are other blocks in the loaded notes of this page.",
-            "Use the small cross on a relation row to remove it. This does not delete either block.",
-            "Metadata is read-only JSON. For sourced blocks, View source provenance jumps to the source.",
-            "Select Close inspector when done."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "pdf",
-      "title": "Read PDFs and capture evidence",
-      "intro": "PDF import copies the file into the notebook's managed assets. Use a PDF without private information while testing.",
-      "steps": [
-        "Select Research, then Import (or Import PDF on an empty viewer) and choose a local .pdf.",
-        "Choose any previously imported PDF in Source document. Sources belong to the notebook, not just the page.",
-        "Navigate with Previous page, Next page or the PDF page field. The number is the physical page, starting at 1.",
-        "Use Zoom out / Zoom in. The initial zoom fits the pane width; there is no reset-to-fit button.",
-        "Optionally enter a Printed page number. It is a citation reference only and is not mapped automatically."
-      ],
-      "expected": "The PDF renders beside your notes. Scanned PDFs without a text layer have no extracted text, and this build does not perform OCR.",
-      "subsections": [
-        {
-          "heading": "Capture text and create Q&A",
-          "steps": [
-            "Edit Selected PDF text down to the passage you need, or type or paste your own. It is pre-filled with the whole page's extracted text.",
-            "Focus a control inside the note that should receive it, then select Capture text.",
-            "Check the new source text block and its Source document · PDF p. … link.",
-            "For a Q&A, put the question wording in Selected PDF text and select Create Q&A. A new note is created with a sourced question and a linked blank answer."
-          ],
-          "callout": "There is no selectable text layer over the PDF. Dragging across the page captures a rectangular image, not words. Changing the page or zoom refills the text field, so finish a text capture first."
-        },
-        {
-          "heading": "Capture a region and return to its source",
-          "steps": [
-            "Focus the receiving note. On the PDF page, press at the upper-left of the region, drag down and right, then release. Use more than a few pixels.",
-            "A screenshot block appears immediately. There is no confirm step. If it is wrong, move the block to Trash and try again.",
-            "While in Research, select Source document · PDF p. …, Actions → View source, or Inspector → View source provenance to jump back.",
-            "Region capture keeps its bounds and page, but not the printed-page field."
-          ],
-          "callout": "Jumping to a source from Write can miss the page change while the viewer loads. If so, click the link again after Research opens."
-        },
-        {
-          "heading": "Make room for reading or writing",
-          "steps": [
-            "Use Collapse notebook sidebar and Expand notebook sidebar in the top toolbar.",
-            "In Research, drag the vertical separator to resize the source and notes panes.",
-            "Switch between Write and Research at any time. Switching unmounts the viewer, so recheck the PDF, page and capture text afterwards."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "media",
-      "title": "Attach files, images and audio",
-      "steps": [
-        "In Research, click the Attach media upload icon and choose Attach image, Attach screenshot, Attach audio or Attach file.",
-        "Choose a local file. It is copied into managed storage and added to the active note (or the first note). Cancelling changes nothing.",
-        "In Write, images can also be added from the command menu with /image.",
-        "Check the preview, the audio player, or Download attached file on file blocks."
-      ],
-      "expected": "Attach screenshot imports an existing image; it does not capture your desktop. Use PDF region capture for a PDF screenshot. If a preview stays on Loading image…, open diagnostics → Scan assets.",
-      "subsections": [
-        {
-          "heading": "Start and stop a recording",
-          "steps": [
-            "In the desired note, select Record audio. Grant microphone access if asked. A working input device is required.",
-            "The button becomes Stop recording and a red Recording indicator with level bars appears.",
-            "Muted or disconnected devices are reported as Microphone muted or Microphone disconnected.",
-            "Select Stop recording and wait for the audio block. A WAV file is saved locally.",
-            "Check playback before transcribing."
-          ],
-          "callout": "Always stop recording before switching pages, modes or closing the app. Leaving a recording note can discard the live recording unsaved."
-        }
-      ]
-    },
-    {
-      "id": "transcription",
-      "title": "Set up and use transcription",
-      "intro": "Local transcription needs both a downloaded Whisper model and the packaged whisper.cpp runtime. A model alone cannot repair a missing runtime.",
-      "subsections": [
-        {
-          "heading": "Manage Local Whisper models",
-          "steps": [
-            "Open Application menu → settings → Transcription. Models: Tiny, Base, Small, Medium and Large-v3, all multilingual.",
-            "Select Download on a model. Tiny is the smallest and a good first test. Downloads come from Hugging Face and need internet and disk space; audio stays local when transcribed.",
-            "Watch the progress bar. Cancel stops it, and Retry appears after a failure.",
-            "When Installed appears, choose Use as default. The default shows a disabled Default button.",
-            "To remove a model, first set another model as default, then select Remove on the non-default one and confirm."
-          ]
-        },
-        {
-          "heading": "Request a transcript",
-          "steps": [
-            "Return with Back to workspace. In an audio block choose Local Whisper or OpenRouter as the Transcription provider.",
-            "Pick Detect language automatically or a Language hint. It is a hint, not a translation control.",
-            "Select Transcribe. Local runs appear as queued/running jobs and show a percentage when available.",
-            "On completion the transcript text appears below the controls. The original audio stays attached.",
-            "On error, read the top alert and the jobs error, then check diagnostics. Retry failed local jobs after fixing the cause."
-          ],
-          "callout": "If Local Whisper reports that the bundled sidecar is missing, you need a package that includes the Whisper runtime. There is no transcript history or transcript editor in this build."
-        },
-        {
-          "heading": "OpenRouter credentials and privacy",
-          "steps": [
-            "In settings → Transcription enter your key under API key and select Save key.",
-            "Once saved, the controls become Replace API key and Remove key. The saved key is never shown.",
-            "In an audio block choose OpenRouter and press Transcribe only when you intend the external upload."
-          ],
-          "callout": "OpenRouter sends the audio to an external service and usage may incur charges. There is no in-app pricing page, cloud model selector or cloud cancel button."
-        }
-      ]
-    },
-    {
-      "id": "search",
-      "title": "Search what is actually indexed",
-      "steps": [
-        "Click the top toolbar search button or press Ctrl + K (Cmd + K on macOS).",
-        "Type a word. Results update as you type.",
-        "Select a result to open its page. Notebook-title results open the first page. There is no guaranteed scroll-to-block highlight.",
-        "Press Escape to close without choosing."
-      ],
-      "bullets": [
-        "Searches active notebook, page and note titles plus stored block data.",
-        "The query is split into word-like terms matched by prefix; all terms must match. Up to 100 ranked results.",
-        "It is not natural-language Q&A, exact-phrase search, full PDF search, OCR, or a search of attachment bytes.",
-        "PDF text becomes searchable once captured as block text.",
-        "The sidebar Search notes… field is a placeholder with no filtering. Use the top toolbar search.",
-        "Trash content is excluded from the index."
-      ]
-    },
-    {
-      "id": "export",
-      "title": "Export, import and library backups",
-      "subsections": [
-        {
-          "heading": "Export a notebook, page or active note",
-          "steps": [
-            "Save edits and open the page. If exporting Active note, focus a control in that note first.",
-            "Open Page actions → Export page.",
-            "Choose a Scope: Notebook, Current page or Active note.",
-            "Select a format button: markdown, pdf, lossless json or ai context.",
-            "Choose a destination folder and wait for the dialog to close. A new dated subfolder is created."
-          ],
-          "table": {
-            "head": ["Format", "File", "What to expect"],
-            "rows": [
-              [
-                "markdown",
-                "notebook.md",
-                "Readable text with relative links to copied media."
-              ],
-              [
-                "pdf",
-                "notebook.pdf",
-                "Printable text and images. Audio and files appear as asset descriptions."
-              ],
-              [
-                "lossless json",
-                "notebook.lossless.v1.json",
-                "Versioned structured archive including relations, transcripts and captured sources."
-              ],
-              [
-                "ai context",
-                "notebook.md",
-                "Markdown with labels like [SOURCE] and [COMMENTARY]. Nothing is sent to an AI service."
-              ]
-            ]
-          },
-          "callout": "Every export folder also contains manifest.json and assets/. Keep the whole folder. Relationships outside the selected scope are excluded, so a narrow scope is not a full archive."
-        },
-        {
-          "heading": "Import a lossless archive",
-          "steps": [
-            "Keep the .json file together with its sibling assets/ folder. Use the archive file, not manifest.json.",
-            "Open Application menu → Import backup and choose notebook.lossless.v1.json. Structure and checksums are validated first.",
-            "Relaunch the app if the new notebook does not appear in the sidebar.",
-            "Open the imported copy and verify source links and attachments."
-          ],
-          "callout": "Import creates a new notebook copy with new identifiers and never overwrites. Importing twice makes two copies. Markdown, PDF and AI-context exports cannot be imported."
-        },
-        {
-          "heading": "Back up the whole library",
-          "steps": [
-            "Stop any recording. Choose a destination outside the active library with enough free space.",
-            "Select Application menu → Back up library, or settings → Maintenance → Back up library.",
-            "Open jobs and wait for the backup job to show completed.",
-            "Keep database.sqlite, assets/, manifest.json and RECOVERY.md together, ideally with a second copy on another disk."
-          ],
-          "callout": "A closed folder picker does not prove the backup finished. The backup does not include provider configuration, downloaded models or the library pointer."
-        },
-        {
-          "heading": "Recover a library backup",
-          "steps": [
-            "There is no recovery button, and Import backup is not the path for a library backup. Ask the maintainer if you are unsure.",
-            "Record your Active library path, then close the app completely.",
-            "Preserve the entire current library in a separate recovery folder, including database sidecars.",
-            "Verify the asset SHA-256 hashes in manifest.json using RECOVERY.md.",
-            "Place the backup's database.sqlite and assets/ together in the active library location. Make sure stale database.sqlite-wal and -shm files are not left beside it.",
-            "If the library was relocated, restore to the path its pointer actually selects.",
-            "Relaunch the same build and verify notebook counts, text, source links, audio and files."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "settings",
-      "title": "Settings, storage, jobs and diagnostics",
-      "subsections": [
-        {
-          "heading": "Appearance and density",
-          "steps": [
-            "Open Application menu → settings → General.",
-            "Choose Appearance: Use system setting, Light or Dark.",
-            "Choose Layout density: Default or Compact. Changes apply immediately without a restart."
-          ]
-        },
-        {
-          "heading": "Relocate the library",
-          "steps": [
-            "Make a library backup, save edits and stop recording first.",
-            "Open settings → Library & Storage and note the Active library path and sizes.",
-            "Select Move library… and choose a parent folder. The app copies and verifies the data into a new folder.",
-            "Wait for Move verified. Restart the application to activate the new library.",
-            "Relaunch and confirm the new Active library path and your content.",
-            "When satisfied and backed up, choose Remove original and confirm. This permanently deletes the retained original."
-          ],
-          "callout": "Activation only happens after a restart. Avoid new edits between a verified move and the restart."
-        },
-        {
-          "heading": "Jobs: progress, cancel and retry",
-          "steps": [
-            "Open Application menu → jobs, or settings → Maintenance.",
-            "Statuses are queued, running, succeeded, failed and cancelled.",
-            "Cancel a queued or running job. It may wait for a checkpoint.",
-            "Fix the cause of a failed job and select Retry. A new attempt is created and the old row stays."
-          ],
-          "callout": "Local transcription, model downloads, backups and library moves use jobs. Restarting during a running job marks it interrupted."
-        },
-        {
-          "heading": "Diagnostics and asset scans",
-          "steps": [
-            "Open Application menu → diagnostics. Filter by process, severity or category.",
-            "Expand an error and select Show full detail to read its message, context and stack.",
-            "Select Export diagnostics and choose a folder. Review the text for local paths before sharing.",
-            "Select Scan assets (or settings → Maintenance → Scan active notebook assets) to count missing, unreferenced and untracked files."
-          ],
-          "callout": "Scans report only. They never delete or repair assets, and Export diagnostics does not submit feedback. Do not delete unreferenced files blindly."
-        }
-      ]
-    },
-    {
-      "id": "trash",
-      "title": "Trash and destructive actions",
-      "intro": "Test with disposable material and make a backup before any permanent deletion. Trash is local and has no timed auto-delete.",
-      "steps": [
-        "Block: Actions → Move to trash, or Inspector → Move to trash.",
-        "Page: Page actions → Move page to trash. Its notes and blocks go too.",
-        "Notebook: the small trash icon beside its sidebar title. There is no confirmation for these recoverable moves.",
-        "Open Application menu → trash, find the item by title, type and date, and select Restore. Restoring a parent restores everything removed with it.",
-        "Select Delete only when the item is no longer needed."
-      ],
-      "callout": "Delete is permanent and has no second confirmation in this build. There is no Empty Trash and no direct note-delete control."
-    },
-    {
-      "id": "shortcuts",
-      "title": "Shortcuts and troubleshooting",
-      "table": {
-        "head": ["Shortcut", "Action"],
-        "rows": [
-          ["Ctrl / Cmd + K", "Open the search dialog"],
-          ["Ctrl / Cmd + Shift + N", "Add a note to the current page"],
-          ["Alt + ↑ / Alt + ↓", "Move the focused text block within its note"],
-          ["Enter in New page", "Create the named page"],
-          ["Escape", "Close menus, search and dialogs"]
-        ]
-      },
+      "id": "questions",
+      "title": "Common questions",
       "faq": [
         {
-          "q": "App will not start",
-          "a": "Keep the exact message, version and package name. Preserve the library and never delete the database."
+          "q": "Does it need internet or an account?",
+          "a": "Core office work runs offline without a mandatory account. Visiting the website, downloading packages or contacting support uses an internet connection."
         },
         {
-          "q": "Text or title seems unsaved",
-          "a": "Leave the field, check the top alert, and reopen the page."
+          "q": "Can my team share it across devices?",
+          "a": "This release is designed for one lawyer on one computer. It has no cloud sync, team permissions or client portal."
         },
         {
-          "q": "Capture landed in the wrong note",
-          "a": "Focus a control inside the intended note before each capture, then trash the mistaken block."
-        },
-        {
-          "q": "PDF words cannot be selected",
-          "a": "Use the Selected PDF text field. Dragging the canvas captures an image region."
-        },
-        {
-          "q": "Selected text changes unexpectedly",
-          "a": "Finish the capture before changing page or zoom, which refill the field."
-        },
-        {
-          "q": "Source link opens the wrong page",
-          "a": "Click it again once the viewer has loaded, or pick the source and page manually."
-        },
-        {
-          "q": "PDF has no extracted text",
-          "a": "It may be scanned. This build has no OCR, so use an external OCR tool first."
-        },
-        {
-          "q": "Recording does not start",
-          "a": "Check microphone permission and the connected input, and use Record audio, not /audio."
-        },
-        {
-          "q": "Recording vanished",
-          "a": "Always press Stop recording before navigating away."
-        },
-        {
-          "q": "Local transcription reports a missing sidecar",
-          "a": "Get a package that includes the Whisper runtime. Downloading a model alone is not enough."
-        },
-        {
-          "q": "Model download fails or stalls",
-          "a": "Check network, disk space and jobs. Cancel, fix the cause, then retry."
-        },
-        {
-          "q": "Import finished but no notebook appears",
-          "a": "Relaunch to refresh the sidebar and confirm you chose the .lossless.v1.json file with its assets."
-        },
-        {
-          "q": "Export or backup fails",
-          "a": "Check destination permissions, disk space, asset scan and diagnostics. A partial folder is not a verified backup."
-        },
-        {
-          "q": "Library path did not change",
-          "a": "Wait for Move verified, restart, then check Active library."
+          "q": "How do updates work?",
+          "a": "Updates are manual. Keep a separate backup and read the release notes before installing a newer release. Automatic updates are not available."
         }
       ]
-    },
-    {
-      "id": "first-session",
-      "title": "Guided first session",
-      "intro": "Use a disposable library, a non-private PDF, a small image and, optionally, a microphone. Plan about 20 to 30 minutes, not counting downloads.",
-      "steps": [
-        "Create Learning research, rename its first page Reading and reasoning, and add a note.",
-        "Add a text block (research aim), a commentary and a question. Leave each field to save.",
-        "Use Add answer on the question and confirm responds to in the Inspector.",
-        "Duplicate a block, reorder it with the menu and Alt + ↑/↓, trash it, then restore it.",
-        "Create Practice captures, add a note, open Research and import your PDF.",
-        "Trim the extracted text to a passage and select Capture text. Create a Q&A note and capture a small region.",
-        "Click the source link while in Research and confirm the right page. Resize the divider and toggle the sidebar.",
-        "Attach an image and a file. Record a short clip and stop it before navigating.",
-        "Check transcription setup. Treat an unavailable runtime or model as blocked, not as success.",
-        "Search for a saved word. Export the page as Markdown and PDF, and the notebook as lossless JSON.",
-        "Import the lossless archive as a new copy and relaunch. Make a whole-library backup and confirm the job completed.",
-        "Reopen the app and verify your content. Export diagnostics if anything failed."
-      ]
-    },
-    {
-      "id": "feedback",
-      "title": "Tester feedback template",
-      "intro": "Research Notebook does not submit feedback automatically. Copy this into your team's issue tracker or message.",
-      "template": "Title: [short description]\nApp version: 0.1.0 (plus package/build filename)\nDate/time and timezone:\nPlatform: Windows/Linux, OS version, x64, package format\nLibrary: fresh / existing / relocated\nFeature and guide section:\nPrerequisites: PDF/audio format, runtime/model, provider, permissions\nReproduction steps:\n1.\n2.\n3.\nExpected result:\nActual result and exact error text:\nFrequency: once / sometimes / every time\nResult: passed / failed / blocked by prerequisite / not tested\nData impact: unsaved edit / wrong target / missing attachment / none\nRelevant job kind/status:\nDiagnostics process/severity/category and timestamp:\nAttachments: redacted screenshot and reviewed diagnostics export\nRecovery attempted and result:\nOther observations:",
-      "callout": "Share only reviewed diagnostics and redacted screenshots. A disabled button, an initiated request or an opened dialog is not evidence of success."
     }
   ]
 }

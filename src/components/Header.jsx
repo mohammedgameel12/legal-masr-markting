@@ -10,9 +10,8 @@ import {
   Check,
   ChevronDown,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import "./Header.css";
-import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import logoDark from "../assets/logo-dark.png";
 
@@ -136,7 +135,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <Link to="/" className="site-header__brand">
+        <a href="/" className="site-header__brand">
           <span className="site-header__logo" aria-hidden="true">
             <img
               src={(resolvedTheme === "dark" ? logoDark : logo).src}
@@ -145,16 +144,16 @@ export default function Header() {
           </span>
 
           {t("brand")}
-        </Link>
+        </a>
 
         <nav
           className={`site-header__nav ${open ? "is-open" : ""}`}
           aria-label={t("navLabel")}
         >
           {links.map((k) => (
-            <Link key={k} to={`/${k}`} onClick={() => setOpen(false)}>
+            <a key={k} href={`/${k}`} onClick={() => setOpen(false)}>
               {t(`nav.${k}`)}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -269,9 +268,7 @@ export default function Header() {
             )}
           </div>
 
-          <Button asChild size="sm" className="site-header__cta">
-            <a href="/#download">{t("download")}</a>
-          </Button>
+          <a className={buttonVariants({size: "sm"}) + " site-header__cta"} href="/#download">{t("download")}</a>
 
           <Button
             variant="ghost"

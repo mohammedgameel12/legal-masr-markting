@@ -1,31 +1,28 @@
-# legal-masr-marketing
+# Legal Masr launch website
 
-This project is an intermediate Astro migration of the existing Legal Masr landing page. Astro owns the public page routes; the existing React app is server-rendered into HTML and hydrated on the client to preserve its current interactions. The existing React components, CSS, assets, translations, and animation code have been retained.
-
-## Requirements
-
-Use a Node.js version supported by the current Astro release (Node.js 22.12.0+ is recommended).
-
-## Install and run
+Arabic-first Astro/React marketing site for **Legal Masr v0.2.4 public beta**.
+Production: https://legalmasr.com. Installer host: https://downloads.legalmasr.com.
 
 ```bash
-npm install
-npm run dev
-```
-
-## Production build
-
-```bash
+npm ci
+npm test
 npm run build
 npm run preview
 ```
 
-## Important migration notes
+Use Node 22.21.1 (see `.node-version`). Deploy the generated **dist** directory to
+Cloudflare Pages. No server adapter, R2 binding or database is needed by the site.
+Old compiled snapshots are excluded from version control.
 
-- Only `.astro` files live in `src/pages`; the original React page components are in `src/react-pages` to avoid Astro page-discovery warnings.
-- The homepage and `/how-to-use` are Astro-generated pages. The React app is server-rendered for initial HTML and then hydrated to preserve existing interactions. This is an intermediate migration: the entire React application still hydrates, so it does not yet achieve Astro's smallest-JavaScript approach.
-- The existing language selector still changes language on the current URL. For strong bilingual SEO, the next phase should create separate Arabic and English URLs, render each locale independently, and add reciprocal `hreflang` tags.
-- Confirm canonical URLs once the production domain is finalized; they are intentionally not hard-coded here.
-- The Feedback route remains disabled as in the source project.
-- `package.json` pins the Vite major version to 7 through npm overrides because Astro 6 requires Vite 7. Reinstall dependencies after extracting this archive.
-- Verify the visual design and all interactions in a local browser before deploying.
+`src/release.json` pins the actual release filenames, byte counts and GitHub
+SHA-256 digests. `PUBLIC_DOWNLOAD_BASE_URL` can override the R2 version prefix;
+`PUBLIC_SUPPORT_URL` can override the support email already used in the app.
+Both are public build-time settings; see `.env.example`.
+
+Read [the launch plan](docs/launch.md) before deployment. It includes R2 upload,
+checksum verification, Pages settings and outstanding release acceptance.
+
+The current URL structure defaults to Arabic, with an English language switch.
+Separate English URLs and reciprocal hreflang tags are future work. The React
+application hydrates for navigation and preferences; static HTML contains the
+Arabic page copy and download links.

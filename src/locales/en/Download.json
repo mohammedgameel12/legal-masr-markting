@@ -1,9 +1,9 @@
 {
   "meta": {
     "back": "Back to home",
-    "badge": "Download",
+    "badge": "Public beta",
     "title": "Download Legal Masr",
-    "subtitle": "Choose the version that matches your operating system. All downloads are free.",
+    "subtitle": "Free downloads for Windows 10/11 x64 and Linux x64. macOS and mobile are not included.",
     "version": "Version {{version}}",
     "released": "Released {{date}}"
   },
@@ -18,17 +18,13 @@
   "groups": {
     "windows": {
       "title": "Windows",
-      "desc": "Installer and portable version for Windows.",
-      "note": "If Windows SmartScreen shows a warning, click “More info” and then “Run anyway”."
+      "desc": "Windows 10/11 on x64 computers.",
+      "note": "Windows may show a SmartScreen or unknown-publisher warning because this beta is unsigned."
     },
     "linux": {
       "title": "Linux",
-      "desc": "Packages for Debian-based and Red Hat-based distributions, plus a universal AppImage.",
+      "desc": "x64 packages for Debian/Ubuntu and Fedora-compatible systems, plus AppImage. Compatibility depends on your distribution.",
       "note": "After downloading, open a terminal in the folder that contains the file and run the command shown on the card."
-    },
-    "macos": {
-      "title": "macOS",
-      "desc": "Disk image for Mac computers."
     }
   },
   "items": {
@@ -38,23 +34,19 @@
     },
     "windows-portable": {
       "name": "Portable version (.zip)",
-      "desc": "No installation needed. Extract the folder and run the app from anywhere."
+      "desc": "Extract the ZIP before launching. App data stays in the normal operating-system data folder; it does not travel with the ZIP."
     },
     "linux-deb": {
       "name": "Debian / Ubuntu (.deb)",
       "desc": "For Debian, Ubuntu, Linux Mint and similar distributions."
     },
     "linux-rpm": {
-      "name": "Fedora / openSUSE (.rpm)",
-      "desc": "For Fedora, openSUSE, RHEL and similar distributions."
+      "name": "Fedora-compatible package (.rpm)",
+      "desc": "RPM package for compatible x64 systems."
     },
     "linux-appimage": {
-      "name": "Universal (AppImage)",
-      "desc": "Works on most distributions without installing. Make it executable and run it."
-    },
-    "macos-dmg": {
-      "name": "macOS (.dmg)",
-      "desc": "Open the disk image and drag the app to your Applications folder."
+      "name": "AppImage (.AppImage)",
+      "desc": "Make the file executable before launching. Compatibility depends on system libraries; app data stays in the normal operating-system data folder."
     }
   },
   "help": {

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.env
+.env.*
+!.env.example
+release-files/
+test-results/
+playwright-report/
+/_astro/
+/index.html
+/404.html
+/download/
+/feedback/
+/how-to-use/

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./Footer.css";
-import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import logoDark from "../assets/logo-dark.png";
 
@@ -70,17 +69,17 @@ export default function Footer() {
 
           <a href="/#features">{t("product.features")}</a>
 
-          <Link to="/how-to-use">{t("product.guide")}</Link>
+          <a href="/how-to-use">{t("product.guide")}</a>
 
-          <Link to="/download">{t("product.download")}</Link>
+          <a href="/download">{t("product.download")}</a>
         </nav>
 
         <nav className="site-footer__col" aria-label={t("company.title")}>
           <h2>{t("company.title")}</h2>
 
-          <a href="/#saas">{t("company.saas")}</a>
+          <a href="/#features">{t("product.features")}</a>
 
-          <Link to="/feedback">{t("company.contact")}</Link>
+          <a href="/feedback">{t("company.contact")}</a>
         </nav>
       </div>
 

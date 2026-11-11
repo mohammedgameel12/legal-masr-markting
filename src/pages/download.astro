@@ -2,8 +2,8 @@
 import App from "../App.jsx";
 import "../index.css";
 const location = Astro.url.pathname;
-const title = "تحميل ليجال مصر | النسخ المتاحة لويندوز ولينكس وماك";
-const description = "حمّل تطبيق ليجال مصر لنظام ويندوز أو لينكس (deb وrpm وAppImage) أو ماك، واختر النسخة المناسبة لجهازك.";
+const title = "تحميل ليجال مصر v0.2.4 | Windows وLinux";
+const description = "حمّل الإصدار التجريبي المجاني لنظام Windows 10/11 x64 أو Linux x64. اختر الملف المناسب لجهازك وابدأ الاستخدام.";
 ---
 <!doctype html>
 <html lang="ar" dir="rtl">
@@ -14,6 +14,8 @@ const description = "حمّل تطبيق ليجال مصر لنظام ويندو
 <meta name="description" content={description} />
 <meta name="robots" content="index,follow" />
 <title>{title}</title>
+<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+<meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Legal Masr" />

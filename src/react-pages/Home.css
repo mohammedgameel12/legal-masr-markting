@@ -237,8 +237,8 @@
 
 .home-product__body {
   display: grid;
-  grid-template-columns: 1fr 210px;
-  min-height: 390px;
+  grid-template-columns: 1fr;
+  min-height: 280px;
 }
 
 .home-product__document {
@@ -1168,3 +1168,8 @@
     transition: none;
   }
 }
+
+/* Marketing copy stays readable before hydration and without JavaScript. */
+.reveal { opacity: 1; transform: none; }
+/* The case example remains visible at narrow laptop and phone widths. */
+.home-product__sidebar { display: block; border-inline-start: 0; }

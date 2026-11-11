@@ -1,113 +1,87 @@
 {
   "hero": {
-    "badge": "Desktop app for solo lawyers",
-    "title": "From case file to legal argument, everything stays tied to its source",
-    "subtitle": "Open judgments, contracts and statutes beside your notes. Capture a passage and Legal Masr keeps the document and page with it, so you can get back to the evidence in seconds.",
-    "primary": "Download for desktop",
-    "secondary": "Read the user guide",
-    "note": "No account required. Your case files don't need to leave your computer.",
+    "badge": "Public beta · v0.2.4",
+    "title": "Your law office, on your computer",
+    "subtitle": "Keep clients, cases, hearings and fees in one place. Legal Masr is a free desktop app for individual Egyptian lawyers, with Arabic-first screens and daily work that runs offline.",
+    "primary": "Download the beta",
+    "secondary": "Get started",
+    "note": "Free. No subscription. No account required.",
     "mock": {
-      "source": "Source text",
-      "sourceText": "The contract terminates upon thirty days' written notice.",
-      "ref": "Contract.pdf · Page 23",
-      "commentary": "Your note",
-      "commentaryText": "The notice must be in writing. Check whether email qualifies as written notice in this case."
+      "source": "Case overview · illustrative example",
+      "sourceText": "Case file 24 — civil dispute",
+      "ref": "Client, hearings and documents in one record",
+      "commentary": "Next action",
+      "commentaryText": "Record the hearing decision, add the next hearing and follow up on preparation."
     }
   },
-
   "features": {
-    "title": "Tools built around the way you work",
-    "lead": "Instead of keeping quotes, notes and questions in one file, keep each piece where it belongs and connect it to the source behind it.",
+    "title": "Built for your daily practice",
+    "lead": "Know what is due. Find the file. Follow up with confidence.",
     "items": [
       {
-        "title": "Keep the text separate from your opinion",
-        "desc": "Keep the law, judgment or source text exactly as it appears, then write your interpretation or notes separately. When you come back later, you can tell what came from the document and what you concluded yourself."
+        "title": "Keep each case together",
+        "desc": "Bring the court reference, clients, opponents, hearing history and documents into one case record."
       },
       {
-        "title": "Read PDFs and capture the evidence",
-        "desc": "Open a judgment, contract or statute beside your notes. Select the passage you need or capture part of the page as an image, and Legal Masr keeps it linked to the document and page."
+        "title": "See hearings and follow-ups",
+        "desc": "Review today’s hearings, upcoming dates and overdue tasks from Today and Agenda. Record a hearing decision and its next hearing together."
       },
       {
-        "title": "Connect every argument to its evidence",
-        "desc": "When you write an argument, link it to the texts and notes you rely on. When you need to verify it, jump back to the source instead of searching through your files again."
+        "title": "Find clients and powers of attorney",
+        "desc": "Keep client details, related cases and powers of attorney connected. Search clients, cases and powers of attorney from one search field."
       },
       {
-        "title": "Turn recordings into searchable notes",
-        "desc": "Record a note or attach an audio file and transcribe it on your device with Whisper. If you need cloud transcription, you can choose it yourself instead of sending recordings automatically."
+        "title": "Follow fees and expenses",
+        "desc": "Record agreed fees, payments and expenses. See what has been received and what remains due for a case or client."
       },
       {
-        "title": "Find the information instead of searching through files",
-        "desc": "Search your case notebooks, pages and notes instantly. Once you capture text from a PDF, you can search that text too, without opening the file and looking through it manually."
+        "title": "Keep documents with their records",
+        "desc": "Add managed copies of documents to a case, client or power of attorney, then open them in the appropriate app on your computer."
       },
       {
-        "title": "Export your work and keep a copy",
-        "desc": "When you're done, export your notes as Markdown or PDF, or export the entire library as JSON. You can also create a complete backup of your research and restore it when you need it."
+        "title": "Back up and export your work",
+        "desc": "Create an encrypted backup manually and save a separate copy. Export a case or all records as CSV files with documents when needed; exports are unencrypted."
       }
     ]
   },
-
   "guide": {
-    "title": "From reading the file to preparing your argument",
-    "lead": "Your daily workflow: open, capture, analyze and connect.",
+    "title": "Start with one case",
+    "lead": "A clear place for each step of your work.",
     "steps": [
       {
-        "title": "Create a notebook for the case",
-        "desc": "Create a separate notebook for each case and organize it into pages for issues, facts, arguments, legal texts or whatever structure works for you."
+        "title": "Set up your app",
+        "desc": "Enter your name, choose a password and keep your recovery key somewhere safe."
       },
       {
-        "title": "Add the case documents",
-        "desc": "Import the judgments, contracts, statutes and PDF files you need to refer to during your research."
+        "title": "Add a client and case",
+        "desc": "Record the client, open a case and add the court details and related documents."
       },
       {
-        "title": "Capture the important passages",
-        "desc": "As you read, capture any text you may rely on. The passage is saved with the document name and page number so you can return to it later."
+        "title": "Plan the next step",
+        "desc": "Add the hearing and preparation tasks, then check Today and Agenda as you work."
       },
       {
-        "title": "Write your analysis and questions",
-        "desc": "Write your interpretation, record questions that need further review, and connect each note to the evidence supporting it."
-      },
-      {
-        "title": "Prepare and export your work",
-        "desc": "When your research is ready, export your notes or case as PDF or Markdown, or keep a complete backup of your library."
+        "title": "Keep a separate backup",
+        "desc": "Create a backup in Settings → Backups and save a copy outside the app’s data folder."
       }
     ],
-    "cta": "Read the full user guide"
+    "cta": "Read the getting-started guide"
   },
-
   "local": {
-    "badge": "Local-first",
-    "title": "Your case files don't need to leave your computer",
-    "desc": "Legal Masr is designed so you can work on your research and files locally. Your notebooks, PDFs and recordings stay on your computer, with no account or required sync. Any cloud service is used only when you choose it.",
+    "badge": "Works offline",
+    "title": "Your case records stay on your computer",
+    "desc": "The desktop app stores office records locally. It does not upload your client or case data to our servers. Visiting this website or downloading an installer connects to the hosting provider.",
     "points": [
-      "Work without an account or sign-in",
-      "Your files and notebooks are stored locally on your computer",
-      "Whisper can transcribe recordings locally after the model is downloaded",
-      "Cloud transcription is optional and never happens automatically"
+      "No mandatory account or cloud sync",
+      "An encrypted local database and manual encrypted backups",
+      "Arabic RTL and English interfaces",
+      "You choose when to export or share files"
     ]
   },
-
-  "saas": {
-    "badge": "Coming Q1 2027",
-    "title": "What's next? A cloud version that keeps your work with you",
-    "desc": "The current desktop app is built for solo lawyers working from their own computer. In Q1 2027, we'll add a SaaS version that lets you access your notebooks from multiple devices and work with your team.",
-    "points": [
-      "Access your notebooks from multiple devices",
-      "Designed to grow from solo practice to a team",
-      "The desktop app will remain available for those who prefer local work"
-    ]
-  },
-
   "download": {
-    "title": "All Your Notebooks in One Place",
-    "desc": "Try Legal Masr and easily organize your notebooks and notes.",
-    "cta": "Download now",
-    "platforms": [
-      {
-        "name": "Linux",
-        "detail": "64-bit · AppImage, DEB & RPM",
-        "href": "#"
-      }
-    ],
-    "note": "This is an early preview, and automatic updates aren't available yet. We recommend keeping a backup of your important notebooks while trying the app."
+    "title": "Public beta · v0.2.4",
+    "desc": "Try a more organized working day.",
+    "cta": "Choose your download",
+    "note": "Windows 10/11 x64 and Linux x64. Unsigned beta packages; macOS is not included. Automatic updates are not available. Begin with sample data and keep a separate backup."
   }
 }

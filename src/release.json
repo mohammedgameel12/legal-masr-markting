@@ -1,0 +1,44 @@
+{
+  "version": "0.2.4",
+  "date": "2026-11-10",
+  "tag": "v0.2.4",
+  "releaseUrl": "https://github.com/Mahmoud-s-Khedr/legal-masr/releases/tag/v0.2.4",
+  "githubBase": "https://github.com/Mahmoud-s-Khedr/legal-masr/releases/download/v0.2.4",
+  "assets": [
+    {
+      "id": "linux-appimage",
+      "group": "linux",
+      "file": "Legal-Masr_0.2.4_linux_x64.AppImage",
+      "bytes": 85379576,
+      "sha256": "733a44c2cbb4e8367a1ce6e659da3ead3d32b6cf9a60f52530d4ea0797c91652"
+    },
+    {
+      "id": "linux-deb",
+      "group": "linux",
+      "file": "Legal-Masr_0.2.4_linux_x64.deb",
+      "bytes": 10499226,
+      "sha256": "3a7376fa8aa24044e3b02d78f16a7d381bc234f98d347caf94882363e0bc7718"
+    },
+    {
+      "id": "linux-rpm",
+      "group": "linux",
+      "file": "Legal-Masr_0.2.4_linux_x64.rpm",
+      "bytes": 10500300,
+      "sha256": "ae387263396621701ea50ef7085aaefc0810e5f53cca6333c85d20e0db7c4dbe"
+    },
+    {
+      "id": "windows-portable",
+      "group": "windows",
+      "file": "Legal-Masr_0.2.4_windows_x64-portable.zip",
+      "bytes": 8907362,
+      "sha256": "38ebca2dec1d6fcc044b019a62c1c2ed005f58ae0049a3b8cdbd1bd68f58643f"
+    },
+    {
+      "id": "windows-installer",
+      "group": "windows",
+      "file": "Legal-Masr_0.2.4_windows_x64-setup.exe",
+      "bytes": 6690626,
+      "sha256": "4c21f3231fbdee47fa58f92f72aae62e54d58c4c5052b656e9bea3b4d688f23d"
+    }
+  ]
+}
